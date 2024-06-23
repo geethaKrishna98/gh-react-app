@@ -4,5 +4,15 @@ jobs:
   runTest:
     runs-on: ubuntu-latest
     steps:
-      - name: abc
-        run: echo abc
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Print Node Version
+        run: node --version
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
