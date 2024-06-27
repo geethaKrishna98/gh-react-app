@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: Print Node version
+        run: node --version
       - name: Install dependencies
         run: npm install
       - name: Build project
